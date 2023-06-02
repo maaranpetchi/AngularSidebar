@@ -6,37 +6,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'AngularSidebar';
-  menuItems = [
+  sidebarItems = [
     {
-      title: 'Menu 1',
-      active: false,
-      subMenuItems: [
-        { title: 'Sub Menu 1' },
-        { title: 'Sub Menu 2' },
-        { title: 'Sub Menu 3' }
+      title: 'Category 1',
+      isOpen: false,
+      subItems: [
+        { title: 'Subcategory 1', route: '/subcategory1' },
+        { title: 'Subcategory 2', route: '/subcategory2' },
+        // Add more subitems as needed
       ]
     },
     {
-      title: 'Menu 2',
-      active: false,
-      subMenuItems: [
-        { title: 'Sub Menu 4' },
-        { title: 'Sub Menu 5' }
+      title: 'Category 2',
+      isOpen: false,
+      subItems: [
+        { title: 'Subcategory 3', route: '/subcategory3' },
+        { title: 'Subcategory 4', route: '/subcategory4' },
+        // Add more subitems as needed
       ]
     },
-    {
-      title: 'Menu 3',
-      active: false,
-      subMenuItems: [
-        { title: 'Sub Menu 6' },
-        { title: 'Sub Menu 7' },
-        { title: 'Sub Menu 8' }
-      ]
-    }
+    // Add more sidebar items as needed
   ];
 
-  toggleSubMenu(item: any): void {
-    item.active = !item.active;
+  toggleAccordion(item: any) {
+    item.isOpen = !item.isOpen;
   }
 }
